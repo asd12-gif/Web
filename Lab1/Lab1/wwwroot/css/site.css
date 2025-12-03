@@ -1,0 +1,47 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* Định nghĩa biến màu cơ bản */
+:root {
+    --font-color: #212529; /* Màu chữ mặc định */
+    --background-color: #f8f9fa; /* Màu nền mặc định */
+}
+
+/* Định nghĩa theme tối */
+.dark-theme {
+    --font-color: #f8f9fa;
+    --background-color: #212529;
+}
+
+/* Áp dụng biến màu vào body và nút */
+body {
+    color: var(--font-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btnToggle {
+    /* Định dạng nút cho đẹp hơn */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
