@@ -34,7 +34,7 @@ namespace Lab2.Models
         // CategoryId (Khóa ngoại)
         [Display(Name = "Category")]
         [Required]
-        public int? CategoryId { get; set; } // int? cho phép NULL (theo cách sửa lỗi Migration trước đó)
+        public int? CategoryId { get; set; } 
 
         //Navigation Property
         public Category? Category { get; set; }

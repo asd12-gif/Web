@@ -3,32 +3,64 @@
   "WorkspaceRootPath": "D:\\IT\\225052394\\Web\\Lab2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\movies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\movies\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\tickets\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\tickets\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\movies\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\migrations\\20251208070927_updatevalidationandratingfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\migrations\\20251208070927_updatevalidationandratingfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\data\\mvcmoviecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\data\\mvcmoviecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\migrations\\mvcmoviecontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\migrations\\mvcmoviecontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\tickets\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\tickets\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\tickets\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\tickets\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\tickets\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\views\\tickets\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\views\\tickets\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\migrations\\20251208103059_addseatnumbertoticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\migrations\\20251208103059_addseatnumbertoticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|d:\\it\\225052394\\web\\lab2\\lab2\\models\\ticketstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77B8CF18-078A-493D-879C-63D42CC19019}|Lab2\\Lab2.csproj|solutionrelative:lab2\\models\\ticketstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +70,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Tickets\\Delete.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Delete.cshtml*",
+              "RelativeToolTip": "Lab2\\Views\\Tickets\\Delete.cshtml*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAIwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T11:00:30.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Customers\\Index.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Customers\\Index.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Customers\\Index.cshtml",
+              "RelativeToolTip": "Lab2\\Views\\Customers\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T10:59:00.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "Lab2\\Controllers\\CustomersController.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "Lab2\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAIwMAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T10:57:36.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20251208105701_RestrictCustomerDelete.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs",
+              "RelativeDocumentMoniker": "Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs",
+              "RelativeToolTip": "Lab2\\Migrations\\20251208105701_RestrictCustomerDelete.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T10:57:01.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MvcMovieContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\MvcMovieContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Lab2\\Migrations\\MvcMovieContextModelSnapshot.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\MvcMovieContextModelSnapshot.cs",
+              "RelativeToolTip": "Lab2\\Migrations\\MvcMovieContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T10:55:00.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MvcMovieContext.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Data\\MvcMovieContext.cs",
+              "RelativeDocumentMoniker": "Lab2\\Data\\MvcMovieContext.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Data\\MvcMovieContext.cs",
+              "RelativeToolTip": "Lab2\\Data\\MvcMovieContext.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T10:54:23.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Details.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Tickets\\Details.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Details.cshtml",
+              "RelativeToolTip": "Lab2\\Views\\Tickets\\Details.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAD4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T10:48:20.528Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -50,93 +173,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Movies\\Create.cshtml",
-              "RelativeDocumentMoniker": "Lab2\\Views\\Movies\\Create.cshtml",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Movies\\Create.cshtml",
-              "RelativeToolTip": "Lab2\\Views\\Movies\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T07:49:20.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Categories\\Index.cshtml",
-              "RelativeDocumentMoniker": "Lab2\\Views\\Categories\\Index.cshtml",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Categories\\Index.cshtml",
-              "RelativeToolTip": "Lab2\\Views\\Categories\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T07:45:18.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Movies\\Index.cshtml",
-              "RelativeDocumentMoniker": "Lab2\\Views\\Movies\\Index.cshtml",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Movies\\Index.cshtml",
-              "RelativeToolTip": "Lab2\\Views\\Movies\\Index.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAqwEYAAAAQAAAAAAAAAA==",
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Lab2\\Models\\Customer.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Customer.cs",
+              "RelativeToolTip": "Lab2\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T10:15:07.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Tickets\\Edit.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Edit.cshtml",
+              "RelativeToolTip": "Lab2\\Views\\Tickets\\Edit.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwCsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T07:42:41.962Z",
+              "WhenOpened": "2025-12-08T10:41:08.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MoviesController.cs",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\MoviesController.cs",
-              "RelativeDocumentMoniker": "Lab2\\Controllers\\MoviesController.cs",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\MoviesController.cs",
-              "RelativeToolTip": "Lab2\\Controllers\\MoviesController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAqwDQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "Lab2\\Controllers\\TicketsController.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "Lab2\\Controllers\\TicketsController.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAAAOgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T07:25:19.94Z",
+              "WhenOpened": "2025-12-08T10:37:38.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "Lab2\\Models\\Category.cs",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Category.cs",
-              "RelativeToolTip": "Lab2\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "20251208103059_AddSeatNumberToTicket.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208103059_AddSeatNumberToTicket.cs",
+              "RelativeDocumentMoniker": "Lab2\\Migrations\\20251208103059_AddSeatNumberToTicket.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208103059_AddSeatNumberToTicket.cs",
+              "RelativeToolTip": "Lab2\\Migrations\\20251208103059_AddSeatNumberToTicket.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAB0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T07:10:23.788Z",
+              "WhenOpened": "2025-12-08T10:30:59.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20251208070927_UpdateValidationAndRatingFinal.cs",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208070927_UpdateValidationAndRatingFinal.cs",
-              "RelativeDocumentMoniker": "Lab2\\Migrations\\20251208070927_UpdateValidationAndRatingFinal.cs",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Migrations\\20251208070927_UpdateValidationAndRatingFinal.cs",
-              "RelativeToolTip": "Lab2\\Migrations\\20251208070927_UpdateValidationAndRatingFinal.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAACMAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "Lab2\\Models\\Ticket.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Ticket.cs",
+              "RelativeToolTip": "Lab2\\Models\\Ticket.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwBgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T07:09:27.586Z",
+              "WhenOpened": "2025-12-08T10:15:44.031Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Movie.cs",
-              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Movie.cs",
-              "RelativeDocumentMoniker": "Lab2\\Models\\Movie.cs",
-              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\Movie.cs",
-              "RelativeToolTip": "Lab2\\Models\\Movie.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAkwCkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Create.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Tickets\\Create.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Create.cshtml",
+              "RelativeToolTip": "Lab2\\Views\\Tickets\\Create.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwCoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T10:14:15.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Index.cshtml",
+              "RelativeDocumentMoniker": "Lab2\\Views\\Tickets\\Index.cshtml",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Views\\Tickets\\Index.cshtml",
+              "RelativeToolTip": "Lab2\\Views\\Tickets\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-08T10:14:17.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TicketStatus.cs",
+              "DocumentMoniker": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\TicketStatus.cs",
+              "RelativeDocumentMoniker": "Lab2\\Models\\TicketStatus.cs",
+              "ToolTip": "D:\\IT\\225052394\\Web\\Lab2\\Lab2\\Models\\TicketStatus.cs",
+              "RelativeToolTip": "Lab2\\Models\\TicketStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T09:25:03.327Z",
+              "WhenOpened": "2025-12-08T10:16:42.317Z",
               "EditorCaption": ""
             }
           ]
