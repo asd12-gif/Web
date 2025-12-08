@@ -18,5 +18,11 @@ namespace Lab2.Models
 
         // Giá 
         public decimal Price { get; set; }
+
+        [Display(Name = "Category")] 
+        public int? CategoryId { get; set; }
+
+        // Navigation Property
+        public Category? Category { get; set; }
     }
 }
