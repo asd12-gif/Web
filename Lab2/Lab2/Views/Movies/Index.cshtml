@@ -4,11 +4,31 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movies</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Movies" asp-action="Index" method="get">
+    <p>
+        <select name="movieCategory" asp-items="ViewBag.MovieCategories">
+            <option value="0">All Categories</option>
+        </select>
+
+        Title: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+
+        <input type="submit" value="Filter / Search" class="btn btn-primary" />
+
+        <a asp-action="Index" class="btn btn-secondary">Reset Filters</a>
+    </p>
+</form>
+<table class="table">
+</table>
 <table class="table">
     <thead>
         <tr>
@@ -19,10 +39,10 @@
                 @Html.DisplayNameFor(model => model.ReleaseDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Genre)
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Rating)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
@@ -40,10 +60,10 @@
                 @Html.DisplayFor(modelItem => item.ReleaseDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genre)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)

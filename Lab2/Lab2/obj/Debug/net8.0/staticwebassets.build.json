@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AgMHiXK+UXrW8tK0puGoA3Sk0xHAH5d1lpn4CxqeOEQ=",
+  "Hash": "2uayTHiHdL4xHPgkB8AT9FJG6ip0tBja2JCSAXZVnT0=",
   "Source": "Lab2",
   "BasePath": "_content/Lab2",
   "Mode": "Default",
@@ -2603,7 +2603,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 01 Dec 2025 09:48:04 GMT"
+          "Value": "Mon, 08 Dec 2025 08:58:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2648,7 +2648,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 01 Dec 2025 09:48:04 GMT"
+          "Value": "Mon, 08 Dec 2025 08:58:14 GMT"
         },
         {
           "Name": "Cache-Control",

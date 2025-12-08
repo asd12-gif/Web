@@ -14,4 +14,5 @@ using Lab2.Models;
 
         public DbSet<Lab2.Models.Movie> Movie { get; set; } = default!;
         public DbSet<Category> Category { get; set; } = default!;
+
 }
