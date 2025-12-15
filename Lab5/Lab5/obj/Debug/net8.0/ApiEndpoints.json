@@ -1,27 +1,48 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
-    "RelativePath": "api/todoitems",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
+    "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetAllToDoItems"
+    ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
-    "RelativePath": "api/todoitems",
+    "ContainingType": "Lab5.Controllers.TodoItemsController",
+    "Method": "GetTodoItems",
+    "RelativePath": "api/TodoItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Lab5.Models.TodoDTO, Lab5, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Lab5.Controllers.TodoItemsController",
+    "Method": "PostTodoItem",
+    "RelativePath": "api/TodoItems",
     "HttpMethod": "POST",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
@@ -32,19 +53,22 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "Lab5.Models.TodoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "CreateToDoItem"
+    ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
-    "RelativePath": "api/todoitems/{id}",
+    "ContainingType": "Lab5.Controllers.TodoItemsController",
+    "Method": "GetTodoItem",
+    "RelativePath": "api/TodoItems/{id}",
     "HttpMethod": "GET",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
@@ -55,19 +79,22 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "Lab5.Models.TodoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetToDoItemById"
+    ]
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
-    "RelativePath": "api/todoitems/{id}",
+    "ContainingType": "Lab5.Controllers.TodoItemsController",
+    "Method": "PutTodoItem",
+    "RelativePath": "api/TodoItems/{id}",
     "HttpMethod": "PUT",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
@@ -76,26 +103,19 @@
         "IsRequired": true
       },
       {
-        "Name": "inputTodoDTO",
+        "Name": "todoDTO",
         "Type": "Lab5.Models.TodoDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "UpdateToDoItem"
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_6",
-    "RelativePath": "api/todoitems/{id}",
+    "ContainingType": "Lab5.Controllers.TodoItemsController",
+    "Method": "DeleteTodoItem",
+    "RelativePath": "api/TodoItems/{id}",
     "HttpMethod": "DELETE",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
@@ -104,13 +124,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "DeleteToDoItem"
+    "ReturnTypes": []
   }
 ]

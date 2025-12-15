@@ -5,46 +5,114 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/todoitems": {
+    "/": {
       "get": {
         "tags": [
           "Lab5"
         ],
-        "operationId": "GetAllToDoItems",
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TodoItems": {
+      "get": {
+        "tags": [
+          "TodoItems"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TodoDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TodoDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TodoDTO"
+                  }
+                }
+              }
+            }
           }
         }
       },
       "post": {
         "tags": [
-          "Lab5"
+          "TodoItems"
         ],
-        "operationId": "CreateToDoItem",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/TodoDTO"
               }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoDTO"
+              }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/todoitems/{id}": {
+    "/api/TodoItems/{id}": {
       "get": {
         "tags": [
-          "Lab5"
+          "TodoItems"
         ],
-        "operationId": "GetToDoItemById",
         "parameters": [
           {
             "name": "id",
@@ -58,15 +126,31 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TodoDTO"
+                }
+              }
+            }
           }
         }
       },
       "put": {
         "tags": [
-          "Lab5"
+          "TodoItems"
         ],
-        "operationId": "UpdateToDoItem",
         "parameters": [
           {
             "name": "id",
@@ -84,9 +168,18 @@
               "schema": {
                 "$ref": "#/components/schemas/TodoDTO"
               }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TodoDTO"
+              }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
@@ -96,9 +189,8 @@
       },
       "delete": {
         "tags": [
-          "Lab5"
+          "TodoItems"
         ],
-        "operationId": "DeleteToDoItem",
         "parameters": [
           {
             "name": "id",
