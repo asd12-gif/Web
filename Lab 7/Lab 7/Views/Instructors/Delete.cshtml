@@ -1,0 +1,63 @@
+﻿@model Lab_7.Models.Instructor
+
+@{
+    ViewData["Title"] = "Delete Instructor";
+    bool canDelete = ViewBag.CanDelete ?? false;
+}
+
+<div class="d-flex align-items-center mb-4 @(canDelete ? "text-danger" : "text-muted")">
+    <i class="fas fa-chalkboard-teacher fa-2x me-3"></i>
+    <h1 class="m-0 fw-bold">Delete Instructor</h1>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+    <div class="card-header @(canDelete ? "bg-danger" : "bg-warning") bg-opacity-10 border-0 py-3">
+        <h5 class="card-title m-0 fw-bold @(canDelete ? "text-danger" : "text-dark")">
+            @(canDelete ? "Confirm Removal" : "Data Integrity Constraint")
+        </h5>
+    </div>
+    <div class="card-body p-4">
+        <dl class="row mb-3">
+            <dt class="col-sm-3 text-muted">Full Name</dt>
+            <dd class="col-sm-9 fw-bold">@Model.LastName, @Model.FirstMidName</dd>
+
+            <dt class="col-sm-3 text-muted">Status</dt>
+            <dd class="col-sm-9">
+                @if (!canDelete)
+                {
+                    <span class="badge rounded-pill bg-warning bg-opacity-10 text-dark px-3 py-2 fw-normal">
+                        <i class="fas fa-link me-1"></i> Active Constraints (Head of Dept / Course Assignments)
+                    </span>
+                }
+                else
+                {
+                    <span class="badge rounded-pill bg-success bg-opacity-10 text-success px-3 py-2 fw-normal">
+                        <i class="fas fa-check me-1"></i> Ready for Deletion
+                    </span>
+                }
+            </dd>
+        </dl>
+
+        @if (!canDelete)
+        {
+            <div class="p-3 bg-light rounded-3 small text-muted border-start border-4 border-warning">
+                <i class="fas fa-info-circle me-1"></i> <strong>Note:</strong> Please remove this instructor as a Department Administrator or unassign them from courses before proceeding with deletion.
+            </div>
+        }
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ID" />
+    <div class="d-flex gap-2">
+        @if (canDelete)
+        {
+            <button type="submit" class="btn btn-danger rounded-pill px-4 shadow-sm fw-bold">Confirm Delete</button>
+        }
+        else
+        {
+            <button type="button" class="btn btn-secondary rounded-pill px-4 opacity-50 shadow-sm" disabled>Ineligible for Deletion</button>
+        }
+        <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 border-0">Back to List</a>
+    </div>
+</form>

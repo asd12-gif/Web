@@ -1,0 +1,47 @@
+﻿@model Lab_7.Models.Department
+
+@{
+    ViewData["Title"] = "Delete Department";
+    bool hasCourses = Model.Courses != null && Model.Courses.Any();
+}
+
+<div class="d-flex align-items-center mb-4 @(hasCourses ? "text-muted" : "text-danger")">
+    <i class="fas fa-university fa-2x me-3"></i>
+    <h1 class="m-0 fw-bold">Delete Department</h1>
+</div>
+
+<div class="alert @(hasCourses ? "alert-warning" : "alert-danger") rounded-4 border-0 shadow-sm mb-4 bg-opacity-10">
+    <h5 class="fw-bold">
+        <i class="fas @(hasCourses ? "fa-ban" : "fa-trash-alt") me-2"></i>
+        @(hasCourses ? "Cannot Delete Department" : "Are you absolutely sure?")
+    </h5>
+    @if (hasCourses)
+    {
+        <p class="mb-0 text-dark">The <strong>@Model.Name</strong> department still manages <strong>@Model.Courses.Count</strong> courses. Please reassign or delete these courses first.</p>
+    }
+</div>
+
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+    <div class="card-body p-4">
+        <dl class="row mb-0">
+            <dt class="col-sm-4 text-muted">Name</dt>
+            <dd class="col-sm-8 fw-bold text-success">@Model.Name</dd>
+
+            <dt class="col-sm-4 text-muted">Budget</dt>
+            <dd class="col-sm-8 fw-bold text-dark">@Model.Budget.ToString("C0")</dd>
+
+            <dt class="col-sm-4 text-muted">Courses Managed</dt>
+            <dd class="col-sm-8 @(hasCourses ? "text-danger fw-bold" : "")">@(Model.Courses?.Count ?? 0) Courses</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="DepartmentID" />
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger rounded-pill px-4 shadow-sm fw-bold" @(hasCourses ? "disabled" : "")>
+            @(hasCourses ? "Action Locked" : "Confirm Deletion")
+        </button>
+        <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 border-0">Cancel</a>
+    </div>
+</form>

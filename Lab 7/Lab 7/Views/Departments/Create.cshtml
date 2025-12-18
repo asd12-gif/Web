@@ -1,0 +1,49 @@
+﻿@model Lab_7.Models.Department
+
+@{
+    ViewData["Title"] = "Create Department";
+}
+
+<div class="text-center mb-5">
+    <h1 class="text-success fw-bold">
+        <i class="fas fa-university me-2"></i>New Department
+    </h1>
+    <p class="text-muted">Fill in the details to establish a new academic department.</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="bg-white border border-success border-opacity-25 rounded-4 p-4 shadow-sm">
+            <form asp-action="Create">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="Name" class="form-label fw-bold"></label>
+                        <input asp-for="Name" class="form-control border-success-subtle py-2" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Budget" class="form-label fw-bold"></label>
+                        <input asp-for="Budget" class="form-control border-success-subtle py-2" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="StartDate" class="form-label fw-bold"></label>
+                        <input asp-for="StartDate" class="form-control border-success-subtle py-2" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="InstructorID" class="form-label fw-bold">Head of Dept</label>
+                        <select asp-for="InstructorID" class="form-select border-success-subtle py-2" asp-items="ViewBag.InstructorID"></select>
+                    </div>
+                    <div class="col-12 mt-4 border-top pt-3 text-end">
+                        <a asp-action="Index" class="btn btn-link text-success text-decoration-none">Back to List</a>
+                        <button type="submit" class="btn btn-success px-5 py-2 fw-bold shadow-sm">Confirm Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

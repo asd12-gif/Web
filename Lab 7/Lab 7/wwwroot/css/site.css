@@ -1,22 +1,129 @@
-html {
-  font-size: 14px;
+﻿html {
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* Biến màu chủ đạo để dễ quản lý */
+:root {
+    --pastel-green-main: #b2d8d8;
+    --pastel-green-dark: #66b2b2;
+    --pastel-green-soft: #f0f9f4;
+    --text-color: #2d5a5a;
+}
+
+/* Hiệu ứng khi nhấn (Focus) vào các nút và ô nhập liệu */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    /* Đổi từ màu xanh dương sang màu xanh lá pastel */
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--pastel-green-main);
+    border-color: var(--pastel-green-dark);
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    /* Margin cho footer */
+    margin-bottom: 60px;
+    background-color: var(--pastel-green-soft);
+    color: var(--text-color);
+}
+
+/* Tùy chỉnh bảng (Table) cho đẹp */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+    .table thead {
+        background-color: var(--pastel-green-main);
+        color: var(--text-color);
+    }
+
+/* Tùy chỉnh các nút bấm mặc định */
+.btn-primary {
+    background-color: var(--pastel-green-dark) !important;
+    border-color: var(--pastel-green-dark) !important;
+}
+
+.btn-outline-primary {
+    color: var(--pastel-green-dark) !important;
+    border-color: var(--pastel-green-dark) !important;
+}
+
+    .btn-outline-primary:hover {
+        background-color: var(--pastel-green-dark) !important;
+        color: white !important;
+    }
+
+/* Custom cho Pagination (Phân trang) */
+.page-link {
+    color: var(--pastel-green-dark);
+}
+
+.page-item.active .page-link {
+    background-color: var(--pastel-green-dark);
+    border-color: var(--pastel-green-dark);
+}
+/* --- TÙY CHỈNH HEADER PASTEL --- */
+
+/* Toàn bộ thanh Navbar */
+.navbar {
+    background-color: #ffffff !important; /* Nền trắng sạch sẽ */
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+    border-bottom: 2px solid var(--pastel-green-main) !important;
+}
+
+/* Logo / Tên ứng dụng */
+.navbar-brand {
+    font-weight: 800;
+    color: var(--pastel-green-dark) !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+/* Các mục Menu */
+.nav-item .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 600;
+    padding: 8px 16px !important;
+    margin: 0 4px;
+    border-radius: 12px; /* Bo góc menu */
+    transition: all 0.3s ease-in-out;
+}
+
+    /* Hiệu ứng khi di chuột qua Menu */
+    .nav-item .nav-link:hover {
+        background-color: var(--pastel-green-main);
+        color: #ffffff !important;
+        transform: translateY(-2px); /* Nhích nhẹ lên trên */
+    }
+
+    /* Mục Menu đang được chọn (Active) */
+    .nav-item .nav-link.active {
+        background-color: var(--pastel-green-dark);
+        color: #ffffff !important;
+    }
+
+/* Icon trong Menu */
+.nav-link i {
+    margin-right: 8px;
+    color: var(--pastel-green-dark);
+}
+
+.nav-link:hover i {
+    color: #ffffff;
 }

@@ -1,0 +1,36 @@
+﻿@model Lab_7.Models.Instructor
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<div class="d-flex align-items-center mb-4">
+    <div class="bg-success bg-opacity-25 p-3 rounded-circle me-3">
+        <i class="fas fa-chalkboard-teacher text-success fa-lg"></i>
+    </div>
+    <h1 class="text-success h3 m-0">Instructor Profile</h1>
+</div>
+
+<div class="card border-0 shadow-sm rounded-4 p-4 mb-4 border-start border-5 border-success">
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="fw-bold mb-3 text-success-emphasis">@Model.LastName @Model.FirstMidName</h4>
+            <p class="text-muted mb-1"><i class="far fa-calendar-alt me-2"></i>Hire Date: @Model.HireDate.ToShortDateString()</p>
+            <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Office: @(Model.OfficeAssignment?.Location ?? "N/A")</p>
+        </div>
+        <div class="col-md-6 border-start ps-4">
+            <h6 class="fw-bold text-success mb-3">Courses Taught:</h6>
+            <ul class="list-unstyled">
+                @foreach (var course in Model.CourseAssignments)
+                {
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> @course.Course.Title</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-success px-5 fw-bold">Edit Profile</a>
+    <a asp-action="Index" class="btn btn-light ms-2">Back to List</a>
+</div>

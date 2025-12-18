@@ -19,10 +19,40 @@ namespace Lab_7.Controllers
             _context = context;
         }
 
-        // GET: Students
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string currentFilter, string searchString, int? pageNumber)
         {
-            return View(await _context.Students.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+
+            // Nếu người dùng tìm kiếm mới, reset trang về 1
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+
+            var students = from s in _context.Students select s;
+
+            // Lọc
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString) || s.FirstMidName.Contains(searchString));
+            }
+
+            // Sắp xếp
+            switch (sortOrder)
+            {
+                case "name_desc": students = students.OrderByDescending(s => s.LastName); break;
+                case "date_asc": students = students.OrderBy(s => s.EnrollmentDate); break;
+                case "date_desc": students = students.OrderByDescending(s => s.EnrollmentDate); break;
+                default: students = students.OrderBy(s => s.LastName); break;
+            }
+
+            int pageSize = 3; // Số dòng trên mỗi trang
+            return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Students/Details/5
@@ -34,7 +64,11 @@ namespace Lab_7.Controllers
             }
 
             var student = await _context.Students
+                .Include(s => s.Enrollments)           // Tải danh sách đăng ký
+                    .ThenInclude(e => e.Course)        // Tải thông tin khóa học tương ứng
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
+
             if (student == null)
             {
                 return NotFound();
@@ -117,18 +151,26 @@ namespace Lab_7.Controllers
         }
 
         // GET: Students/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? saveChangesError = false)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var student = await _context.Students
+                .Include(s => s.Enrollments) // Nạp các bản ghi đăng ký để cảnh báo
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (student == null)
+
+            if (student == null) return NotFound();
+
+            if (saveChangesError.GetValueOrDefault())
             {
-                return NotFound();
+                ViewData["ErrorMessage"] = "Xóa thất bại. Vui lòng thử lại hoặc liên hệ quản trị viên.";
+            }
+
+            // Cảnh báo về số lượng bản ghi sẽ bị xóa kèm
+            if (student.Enrollments.Any())
+            {
+                ViewData["WarningMessage"] = $"Lưu ý: Sinh viên này đang có {student.Enrollments.Count} bản ghi đăng ký học. Khi xóa sinh viên, các bản ghi này sẽ bị xóa vĩnh viễn.";
             }
 
             return View(student);
@@ -140,15 +182,19 @@ namespace Lab_7.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var student = await _context.Students.FindAsync(id);
-            if (student != null)
+            if (student == null) return RedirectToAction(nameof(Index));
+
+            try
             {
                 _context.Students.Remove(student);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            catch (DbUpdateException)
+            {
+                return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
+            }
         }
-
         private bool StudentExists(int id)
         {
             return _context.Students.Any(e => e.ID == id);

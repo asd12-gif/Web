@@ -1,43 +1,44 @@
 ﻿@model Lab_7.Models.Course
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Course";
 }
 
-<h1>Create</h1>
+<div class="d-flex align-items-center mb-4">
+    <span class="p-3 bg-success bg-opacity-10 rounded-circle me-3">
+        <i class="fas fa-plus-square text-success fa-xl"></i>
+    </span>
+    <h1 class="text-success m-0 h3">New Course Enrollment</h1>
+</div>
 
-<h4>Course</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 p-4 border border-success border-opacity-10 rounded-4 ms-2">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CourseID" class="control-label"></label>
-                <input asp-for="CourseID" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="CourseID" class="form-label fw-bold"></label>
+                <input asp-for="CourseID" class="form-control border-success-subtle bg-light shadow-sm" placeholder="Ex: 1050" />
                 <span asp-validation-for="CourseID" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="Title" class="form-label fw-bold"></label>
+                <input asp-for="Title" class="form-control border-success-subtle shadow-sm" placeholder="Course Title" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Credits" class="control-label"></label>
-                <input asp-for="Credits" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="Credits" class="form-label fw-bold"></label>
+                <input asp-for="Credits" class="form-control border-success-subtle shadow-sm" placeholder="Number of credits" />
                 <span asp-validation-for="Credits" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group mb-4">
+                <label asp-for="DepartmentID" class="form-label fw-bold">Department</label>
+                <select asp-for="DepartmentID" class="form-select border-success-subtle shadow-sm" asp-items="ViewBag.DepartmentID">
+                    <option value="">-- Select Department --</option>
+                </select>
+            </div>
+            <div class="form-group pt-2">
+                <button type="submit" class="btn btn-success w-100 fw-bold py-2 mb-2">Save Course</button>
+                <a asp-action="Index" class="btn btn-light w-100 text-muted border-0">Go back</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

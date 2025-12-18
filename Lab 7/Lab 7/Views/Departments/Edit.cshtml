@@ -1,0 +1,54 @@
+﻿@model Lab_7.Models.Department
+
+@{
+    ViewData["Title"] = "Edit Department";
+}
+
+<div class="d-flex align-items-center mb-4 bg-success bg-opacity-10 p-3 rounded-4">
+    <i class="fas fa-university text-success fa-2x me-3"></i>
+    <h1 class="text-success m-0">Edit Department</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DepartmentID" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label fw-bold text-success-emphasis"></label>
+                <input asp-for="Name" class="form-control border-success-subtle" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Budget" class="control-label fw-bold text-success-emphasis"></label>
+                <input asp-for="Budget" class="form-control border-success-subtle" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="StartDate" class="control-label fw-bold text-success-emphasis"></label>
+                <input asp-for="StartDate" class="form-control border-success-subtle" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="InstructorID" class="control-label fw-bold text-success-emphasis">Administrator</label>
+                <select asp-for="InstructorID" class="form-select border-success-subtle" asp-items="ViewBag.InstructorID"></select>
+                <span asp-validation-for="InstructorID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success px-5">Update</button>
+                <a asp-action="Index" class="btn btn-secondary px-4 ms-2 opacity-75">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

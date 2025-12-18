@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Lab_7.Models.SchoolViewModels.EnrollmentDateGroup>
+
+@{
+    ViewData["Title"] = "Student Body Statistics";
+}
+
+<div class="d-flex align-items-center mb-4 text-success">
+    <i class="fas fa-chart-pie fa-2x me-3"></i>
+    <h1 class="m-0 fw-bold">Student Body Statistics</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-header bg-success bg-opacity-10 border-0 py-3">
+                <h5 class="card-title m-0 text-success fw-bold small uppercase">Enrollment Report</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light text-muted small">
+                        <tr>
+                            <th class="ps-4 py-3">ENROLLMENT DATE</th>
+                            <th class="py-3 text-center">STUDENT COUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-4 fw-bold text-dark">
+                                    <i class="far fa-calendar-alt me-2 text-success"></i>
+                                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge rounded-pill bg-success px-3 py-2">
+                                        @item.StudentCount Students
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt-4 p-3 bg-light rounded-4 border-start border-4 border-success small text-muted">
+            <i class="fas fa-info-circle me-1"></i> 
+            This data is grouped automatically based on student enrollment records in the database.
+        </div>
+    </div>
+</div>
