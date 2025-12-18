@@ -1,0 +1,34 @@
+﻿@model lab8.Models.Brand
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-info-circle-fill me-2"></i>Chi tiết Hãng xe</h4>
+                </div>
+                <div class="card-body p-4">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th class="text-muted small text-uppercase" style="width: 30%">Mã hệ thống (ID)</th>
+                            <td class="fw-bold text-purple-dark">#@Model.Id</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted small text-uppercase">Tên hãng xe</th>
+                            <td>@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted small text-uppercase">Quốc gia</th>
+                            <td><span class="badge bg-purple-badge">@Model.Country</span></td>
+                        </tr>
+                    </table>
+
+                    <div class="mt-4 pt-3 border-top d-flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-purple-main px-4">Chỉnh sửa</a>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Quay lại</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model lab8.Models.CarModel
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-tag-fill me-2"></i>Thêm Dòng Xe Mới</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Id" class="form-label fw-bold text-muted small">ID Dòng xe</label>
+                            <input asp-for="Id" class="form-control border-purple-light" />
+                            <span asp-validation-for="Id" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên dòng xe</label>
+                            <input asp-for="Name" class="form-control border-purple-light" placeholder="Ví dụ: Camry, Civic..." />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="BrandId" class="form-label fw-bold text-muted small">Hãng xe sở hữu</label>
+                            <select asp-for="BrandId" class="form-select border-purple-light"
+                                    asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name"))">
+                                <option value="">-- Chọn hãng xe --</option>
+                            </select>
+                            <span asp-validation-for="BrandId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-purple-main shadow-sm mb-2">Tạo dòng xe</button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Quay lại</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

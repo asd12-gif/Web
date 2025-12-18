@@ -1,0 +1,39 @@
+﻿@model lab8.Models.Car
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm" style="border-radius: 15px;">
+                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-car-front-fill me-2"></i>Chi tiết Xe</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="display-1 text-purple-light"><i class="bi bi-car-front"></i></div>
+                        <h3 class="fw-bold">@Model.Name</h3>
+                    </div>
+
+                    <table class="table table-borderless border-top">
+                        <tr>
+                            <th class="text-muted small text-uppercase" style="width: 30%">Mã quản lý</th>
+                            <td class="fw-bold text-purple-dark">#@Model.Id</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted small text-uppercase">Tên định danh</th>
+                            <td>@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <th class="text-muted small text-uppercase">Dòng xe (Model)</th>
+                            <td><span class="badge bg-purple-badge">@Model.Name</span></td>
+                        </tr>
+                    </table>
+
+                    <div class="mt-4 pt-3 border-top d-flex gap-2 justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-purple-main px-5 shadow-sm">Chỉnh sửa</a>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4 border-0">Quay lại</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

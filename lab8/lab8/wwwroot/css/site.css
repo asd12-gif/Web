@@ -1,0 +1,111 @@
+﻿:root {
+    --purple-pastel: #f3e5f5; 
+    --purple-medium: #ce93d8;
+    --purple-dark: #7b1fa2;
+    --sidebar-width: 250px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+/* Sidebar Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #f3e5f5;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+}
+
+.sidebar-header {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: #6a1b9a; 
+    text-align: center;
+    margin-bottom: 30px;
+    white-space: nowrap;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px;
+}
+
+.nav-sidebar a {
+    display: block;
+    padding: 12px 15px;
+    color: #4a148c;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-bottom: 5px;
+}
+
+    .nav-sidebar a:hover {
+        background-color: #e1bee7;
+        color: #6a1b9a;
+
+    }
+
+    .nav-sidebar a.active {
+        background-color: var(--purple-medium);
+        color: white;
+        border-left: 5px solid var(--purple-dark);
+    }
+
+/* Main Content Area */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+/* Màu cho trang Index */
+.text-purple-dark {
+    color: #6a1b9a;
+}
+
+.bg-purple-light {
+    background-color: #f8f0fb;
+}
+
+.bg-purple-badge {
+    background-color: #e1bee7;
+    color: #4a148c;
+}
+
+.btn-purple-main {
+    background-color: #9c27b0;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 20px;
+}
+
+    .btn-purple-main:hover {
+        background-color: #7b1fa2;
+        color: white;
+    }
+
+/* Hiệu ứng bảng */
+.table thead th {
+    border-top: none;
+    color: #7b1fa2;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    padding: 15px;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    padding: 15px;
+    color: #555;
+}

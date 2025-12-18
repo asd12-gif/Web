@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Dashboard</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">CAR MANAGER</div>
+        <nav class="nav-sidebar">
+            <a asp-controller="Home" asp-action="Index">🏠 Trang chủ</a>
+            <a asp-controller="Brand" asp-action="Index">🏷️ Hãng xe (Brand)</a>
+            <a asp-controller="CarModel" asp-action="Index">📋 Dòng xe (Model)</a>
+            <a asp-controller="Car" asp-action="Index">🚘 Quản lý Xe</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <main role="main">
+            @RenderBody()
+        </main>
+
+        <footer class="footer text-muted mt-5">
+            <div class="container-fluid">
+                &copy; 2025 - Lab8 Car Management
+            </div>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
