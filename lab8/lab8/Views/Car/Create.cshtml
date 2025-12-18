@@ -4,37 +4,29 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
-                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
-                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-car-front-fill me-2"></i>Thêm Xe Cụ Thể</h4>
+                <div class="card-header bg-purple-light border-0 py-3">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-plus-circle me-2"></i>Thêm Xe Mới</h4>
                 </div>
                 <div class="card-body p-4">
                     <form asp-action="Create">
-                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
                         <div class="mb-3">
-                            <label asp-for="Id" class="form-label fw-bold text-muted small">Mã xe</label>
-                            <input asp-for="Id" class="form-control border-purple-light" />
-                            <span asp-validation-for="Id" class="text-danger small"></span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên định danh xe</label>
-                            <input asp-for="Name" class="form-control border-purple-light" placeholder="Ví dụ: Xe anh A, Xe kho 1..." />
+                            <label asp-for="Name" class="form-label fw-bold small">Tên xe / Biển số</label>
+                            <input asp-for="Name" class="form-control border-purple-light" placeholder="Nhập tên xe..." />
                             <span asp-validation-for="Name" class="text-danger small"></span>
                         </div>
 
                         <div class="mb-4">
-                            <label asp-for="CarModelId" class="form-label fw-bold text-muted small">Thuộc dòng xe</label>
+                            <label asp-for="CarModelId" class="form-label fw-bold small">Dòng xe (Model)</label>
                             <select asp-for="CarModelId" class="form-select border-purple-light"
-                                    asp-items="@(new SelectList(ViewBag.CarModels, "Id", "Name"))">
+                                    asp-items="@(new SelectList(ViewBag.CarModels, "Id", "CarModelName"))">
                                 <option value="">-- Chọn dòng xe --</option>
                             </select>
                             <span asp-validation-for="CarModelId" class="text-danger small"></span>
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-purple-main shadow-sm mb-2">Lưu xe</button>
-                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Quay lại</a>
+                            <button type="submit" class="btn btn-purple-main shadow-sm">Lưu xe</button>
+                            <a asp-action="Index" class="btn btn-link text-muted">Hủy bỏ</a>
                         </div>
                     </form>
                 </div>

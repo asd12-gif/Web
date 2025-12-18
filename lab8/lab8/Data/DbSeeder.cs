@@ -6,11 +6,10 @@ namespace lab8.Data
     public static class DbSeeder
     {
         public static void Seed(ApplicationDbContext context)
-        {
-            // Kiểm tra nếu đã có dữ liệu thì không seed nữa
+        {           
             if (context.Brands.Any()) return;
 
-            // 1. Seed 10 Brands (Hãng xe)
+            // 1. Seed 10 Brands
             var b1 = new Brand { Name = "Toyota", Country = "Japan" };
             var b2 = new Brand { Name = "Hyundai", Country = "Korea" };
             var b3 = new Brand { Name = "BMW", Country = "Germany" };
@@ -23,9 +22,9 @@ namespace lab8.Data
             var b10 = new Brand { Name = "Mazda", Country = "Japan" };
 
             context.Brands.AddRange(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10);
-            context.SaveChanges(); // Lưu để lấy ID cho bước sau
+            context.SaveChanges(); 
 
-            // 2. Seed 10 CarModels (Dòng xe)
+            // 2. Seed 10 CarModels 
             var m1 = new CarModel { Name = "Vios", BrandId = b1.Id };
             var m2 = new CarModel { Name = "Accent", BrandId = b2.Id };
             var m3 = new CarModel { Name = "3 Series", BrandId = b3.Id };
@@ -40,7 +39,7 @@ namespace lab8.Data
             context.CarModel.AddRange(m1, m2, m3, m4, m5, m6, m7, m8, m9, m10);
             context.SaveChanges();
 
-            // 3. Seed 10 Cars (Xe cụ thể)
+            // 3. Seed 10 Cars
             context.Cars.AddRange(
                 new Car { Name = "Vios 1.5G 2024", CarModelId = m1.Id },
                 new Car { Name = "Accent AT Đặc biệt", CarModelId = m2.Id },
