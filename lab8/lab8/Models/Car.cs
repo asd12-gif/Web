@@ -6,10 +6,10 @@ namespace lab8.Models
     public class Car
     {
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        [Required]
+        public string Name { get; set; }
+        public string? ImageUrl { get; set; } 
+        public string? Description { get; set; }
         public int CarModelId { get; set; }
-        [ForeignKey(nameof(CarModelId))]
-        public CarModel CarModel { get; set; } = null!;
+        public CarModel? CarModel { get; set; }
     }
 }

@@ -25,11 +25,30 @@ namespace lab8.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Brand brand)
+        public IActionResult Create(Brand brand, IFormFile? ImageFile)
         {
-            if (!ModelState.IsValid) return View(brand);
-            _brandService.CreateBrand(brand);
-            return RedirectToAction(nameof(Index));
+            ModelState.Remove("ImageUrl"); // Tránh lỗi validation bắt buộc chuỗi
+
+            if (ModelState.IsValid)
+            {
+                if (ImageFile != null && ImageFile.Length > 0)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(ImageFile.FileName);
+                    string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "brands");
+
+                    if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
+
+                    using (var stream = new FileStream(Path.Combine(uploadPath, fileName), FileMode.Create))
+                    {
+                        ImageFile.CopyTo(stream);
+                    }
+                    brand.ImageUrl = "/images/brands/" + fileName;
+                }
+
+                _brandService.CreateBrand(brand);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(brand);
         }
 
         // GET: /Brand/Edit/5
@@ -42,11 +61,32 @@ namespace lab8.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Brand brand)
+        public IActionResult Edit(Brand brand, IFormFile? ImageFile)
         {
-            if (!ModelState.IsValid) return View(brand);
-            _brandService.UpdateBrand(brand);
-            return RedirectToAction(nameof(Index));
+            ModelState.Remove("ImageUrl");
+
+            if (ModelState.IsValid)
+            {
+                if (ImageFile != null && ImageFile.Length > 0)
+                {
+                    // Lưu ảnh mới
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(ImageFile.FileName);
+                    string uploadPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "brands");
+
+                    if (!Directory.Exists(uploadPath)) Directory.CreateDirectory(uploadPath);
+
+                    using (var stream = new FileStream(Path.Combine(uploadPath, fileName), FileMode.Create))
+                    {
+                        ImageFile.CopyTo(stream);
+                    }
+                    // Gán đường dẫn ảnh mới
+                    brand.ImageUrl = "/images/brands/" + fileName;
+                }
+
+                _brandService.UpdateBrand(brand);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(brand);
         }
 
         public IActionResult Details(int id)

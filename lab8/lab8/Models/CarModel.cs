@@ -14,6 +14,8 @@ namespace lab8.Models
         [ForeignKey("BrandId")]
         public int BrandId { get; set; }
         public Brand Brand { get; set; } = null!;
+        public string? ImageUrl { get; set; } 
+        public string? Description { get; set; }
         // Navigation
         public ICollection<Car> Cars { get; set; } = new List<Car>();
     }

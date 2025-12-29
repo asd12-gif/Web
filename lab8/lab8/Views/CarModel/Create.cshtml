@@ -8,14 +8,8 @@
                     <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-tag-fill me-2"></i>Thêm Dòng Xe Mới</h4>
                 </div>
                 <div class="card-body p-4">
-                    <form asp-action="Create">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
-                        <div class="mb-3">
-                            <label asp-for="Id" class="form-label fw-bold text-muted small">ID Dòng xe</label>
-                            <input asp-for="Id" class="form-control border-purple-light" />
-                            <span asp-validation-for="Id" class="text-danger small"></span>
-                        </div>
 
                         <div class="mb-3">
                             <label asp-for="Name" class="form-label fw-bold text-muted small">Tên dòng xe</label>
@@ -23,13 +17,17 @@
                             <span asp-validation-for="Name" class="text-danger small"></span>
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <label asp-for="BrandId" class="form-label fw-bold text-muted small">Hãng xe sở hữu</label>
-                            <select asp-for="BrandId" class="form-select border-purple-light"
-                                    asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name"))">
+                            <select asp-for="BrandId" class="form-select border-purple-light" asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name"))">
                                 <option value="">-- Chọn hãng xe --</option>
                             </select>
                             <span asp-validation-for="BrandId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-muted small">Hình đại diện dòng xe</label>
+                            <input type="file" name="ImageFile" class="form-control border-purple-light" accept="image/*" />
                         </div>
 
                         <div class="d-grid gap-2">

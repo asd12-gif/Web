@@ -5,7 +5,7 @@
 namespace lab8.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCarModelVm : Migration
+    public partial class AddCustomerAndOrder : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -2,26 +2,40 @@
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
                 <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
                     <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-info-circle-fill me-2"></i>Chi tiết Hãng xe</h4>
                 </div>
                 <div class="card-body p-4">
-                    <table class="table table-borderless">
-                        <tr>
-                            <th class="text-muted small text-uppercase" style="width: 30%">Mã hệ thống (ID)</th>
-                            <td class="fw-bold text-purple-dark">#@Model.Id</td>
-                        </tr>
-                        <tr>
-                            <th class="text-muted small text-uppercase">Tên hãng xe</th>
-                            <td>@Model.Name</td>
-                        </tr>
-                        <tr>
-                            <th class="text-muted small text-uppercase">Quốc gia</th>
-                            <td><span class="badge bg-purple-badge">@Model.Country</span></td>
-                        </tr>
-                    </table>
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="p-3 border rounded-3 bg-light">
+                                <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/no-image.png" : Model.ImageUrl)"
+                                     alt="@Model.Name" class="img-fluid" style="max-height: 150px; object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <th class="text-muted small text-uppercase" style="width: 35%">ID</th>
+                                    <td class="fw-bold text-purple-dark">#@Model.Id</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-muted small text-uppercase">Tên hãng xe</th>
+                                    <td class="fs-5 fw-bold">@Model.Name</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-muted small text-uppercase">Quốc gia</th>
+                                    <td><span class="badge bg-purple-badge">@Model.Country</span></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-muted small text-uppercase">Mô tả</th>
+                                    <td><p class="text-muted small">@Model.Description</p></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
 
                     <div class="mt-4 pt-3 border-top d-flex gap-2">
                         <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-purple-main px-4">Chỉnh sửa</a>

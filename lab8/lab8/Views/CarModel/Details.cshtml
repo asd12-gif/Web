@@ -4,28 +4,37 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
-                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
-                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-tag-fill me-2"></i>Thông tin Dòng xe</h4>
+                <div class="card-header bg-purple-light border-0 py-3">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-info-circle-fill me-2"></i>Chi tiết Dòng xe</h4>
                 </div>
                 <div class="card-body p-4">
-                    <table class="table table-borderless">
-                        <tr>
-                            <th class="text-muted small text-uppercase" style="width: 30%">Mã dòng xe</th>
-                            <td class="fw-bold text-purple-dark">#@Model.Id</td>
-                        </tr>
-                        <tr>
-                            <th class="text-muted small text-uppercase">Tên dòng xe</th>
-                            <td class="fs-5">@Model.CarModelName</td>
-                        </tr>
-                        <tr>
-                            <th class="text-muted small text-uppercase">Thuộc hãng</th>
-                            <td><span class="badge bg-purple-badge">@Model.BrandName</span></td>
-                        </tr>
-                    </table>
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center shadow-sm" style="width: 120px; height: 120px;">
+                                <i class="bi bi-car-front text-purple-dark" style="font-size: 3rem;"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <table class="table table-borderless mb-0">
+                                <tr>
+                                    <th class="text-muted small text-uppercase" style="width: 35%">Mã dòng xe</th>
+                                    <td class="fw-bold text-purple-dark">#@Model.Id</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-muted small text-uppercase">Tên dòng xe</th>
+                                    <td class="fs-5 fw-bold text-dark">@Model.CarModelName</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-muted small text-uppercase">Thuộc hãng</th>
+                                    <td><span class="badge bg-purple-badge text-purple-dark px-3 py-2">@Model.BrandName</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
 
-                    <div class="mt-4 pt-3 border-top d-flex gap-2">
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Quay lại</a>
                         <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-purple-main px-4">Chỉnh sửa</a>
-                        <a asp-action="Index" class="btn btn-outline-secondary px-4">Quay lại danh sách</a>
                     </div>
                 </div>
             </div>

@@ -2,36 +2,44 @@
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
                 <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
                     <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-plus-circle-fill me-2"></i>Thêm Hãng Xe Mới</h4>
                 </div>
                 <div class="card-body p-4">
-                    <form asp-action="Create">
+                    @* QUAN TRỌNG: Thêm enctype *@
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
                         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                        <div class="mb-3">
-                            <label asp-for="Id" class="form-label fw-bold text-muted small">Mã định danh (ID)</label>
-                            <input asp-for="Id" class="form-control border-purple-light" placeholder="Nhập ID hãng..." />
-                            <span asp-validation-for="Id" class="text-danger small"></span>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Name" class="form-label fw-bold text-muted small">Tên hãng xe</label>
+                                <input asp-for="Name" class="form-control border-purple-light" placeholder="Ví dụ: Toyota" />
+                                <span asp-validation-for="Name" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Country" class="form-label fw-bold text-muted small">Quốc gia</label>
+                                <input asp-for="Country" class="form-control border-purple-light" placeholder="Ví dụ: Nhật Bản" />
+                                <span asp-validation-for="Country" class="text-danger small"></span>
+                            </div>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên hãng xe</label>
-                            <input asp-for="Name" class="form-control border-purple-light" placeholder="Ví dụ: Toyota, BMW..." />
-                            <span asp-validation-for="Name" class="text-danger small"></span>
+                            <label class="form-label fw-bold text-muted small">Logo hãng xe (Từ máy tính)</label>
+                            @* Đổi thành input file *@
+                            <input type="file" name="ImageFile" class="form-control border-purple-light" accept="image/*" />
+                            <div class="form-text small text-info">Hệ thống sẽ tự động lưu vào thư mục /images/brands/</div>
                         </div>
 
                         <div class="mb-4">
-                            <label asp-for="Country" class="form-label fw-bold text-muted small">Quốc gia</label>
-                            <input asp-for="Country" class="form-control border-purple-light" placeholder="Ví dụ: Nhật Bản, Đức..." />
-                            <span asp-validation-for="Country" class="text-danger small"></span>
+                            <label asp-for="Description" class="form-label fw-bold text-muted small">Mô tả hãng xe</label>
+                            <textarea asp-for="Description" class="form-control border-purple-light" rows="3"></textarea>
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-purple-main shadow-sm mb-2">Lưu dữ liệu</button>
-                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Quay lại danh sách</a>
+                            <button type="submit" class="btn btn-purple-main shadow-sm">Lưu dữ liệu</button>
+                            <a asp-action="Index" class="btn btn-link text-secondary btn-sm text-decoration-none">Quay lại danh sách</a>
                         </div>
                     </form>
                 </div>

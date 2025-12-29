@@ -2,32 +2,46 @@
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
-                <div class="card-header bg-purple-light border-0 py-3" style="border-radius: 15px 15px 0 0;">
-                    <h4 class="text-purple-dark mb-0 fw-bold">
-                        <i class="bi bi-car-front-fill me-2"></i>Cập nhật thông tin Xe
-                    </h4>
+                <div class="card-header bg-purple-light border-0 py-3">
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-pencil-square me-2"></i>Cập nhật Xe</h4>
                 </div>
                 <div class="card-body p-4">
-                    <form asp-action="Edit">
+                    <form asp-action="Edit" method="post" enctype="multipart/form-data">
                         <input type="hidden" asp-for="Id" />
+                        <input type="hidden" asp-for="ImageUrl" />
+
+                        <div class="text-center mb-4">
+                            <p class="small text-muted mb-2">Ảnh hiện tại:</p>
+                            <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "/images/no-image.png" : Model.ImageUrl)"
+                                 class="img-thumbnail shadow-sm" style="height: 120px; border-radius: 10px;">
+                        </div>
 
                         <div class="mb-3">
-                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên xe / Biển số</label>
+                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên xe</label>
                             <input asp-for="Name" class="form-control border-purple-light" />
                             <span asp-validation-for="Name" class="text-danger small"></span>
                         </div>
 
+                        <div class="mb-3">
+                            <label asp-for="CarModelId" class="form-label fw-bold text-muted small">Dòng xe</label>
+                            <select asp-for="CarModelId" class="form-select border-purple-light" asp-items="ViewBag.CarModelId"></select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted small">Thay đổi ảnh mới (Để trống nếu giữ ảnh cũ)</label>
+                            <input type="file" name="ImageFile" class="form-control border-purple-light" accept="image/*" />
+                        </div>
+
                         <div class="mb-4">
-                            <label asp-for="CarModelId" class="form-label fw-bold text-muted small">ID Dòng xe (Nhập số)</label>
-                            <input asp-for="CarModelId" class="form-control border-purple-light" />
-                            <span asp-validation-for="CarModelId" class="text-danger small"></span>
+                            <label asp-for="Description" class="form-label fw-bold text-muted small">Mô tả</label>
+                            <textarea asp-for="Description" class="form-control border-purple-light" rows="3"></textarea>
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-purple-main shadow-sm mb-2">Lưu thay đổi</button>
-                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Quay lại danh sách</a>
+                            <button type="submit" class="btn btn-purple-main shadow-sm">Cập nhật thay đổi</button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Hủy</a>
                         </div>
                     </form>
                 </div>

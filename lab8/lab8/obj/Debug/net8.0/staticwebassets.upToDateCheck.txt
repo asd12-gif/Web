@@ -58,3 +58,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\images\brands\logo.jpg
+wwwroot\images\cars\car.jpg
+wwwroot\images\customers\customer.jpg

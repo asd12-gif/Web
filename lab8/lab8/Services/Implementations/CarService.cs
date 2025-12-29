@@ -1,35 +1,55 @@
-﻿using lab8.Models;
-using lab8.Repository.Interface;
+﻿using lab8.Data;
+using lab8.Models;
 using lab8.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace lab8.Services.Implementations
+namespace lab8.Services
 {
     public class CarService : ICarService
     {
-        private readonly ICarRepository _repository;
-        public CarService(ICarRepository repository)
+        private readonly ApplicationDbContext _context;
+
+        public CarService(ApplicationDbContext context)
         {
-            _repository = repository;
+            _context = context;
         }
-        public List<Car> GetAllCars()
+
+        // Lấy danh sách xe kèm theo thông tin Dòng xe (CarModel)
+        public IEnumerable<Car> GetAllCars()
         {
-            return _repository.GetAll();
+            return _context.Cars
+                           .Include(c => c.CarModel) // Quan trọng để hiện tên dòng xe ở Index
+                           .ToList();
         }
-        public Car? GetCarById(int id)
+
+        // Lấy 1 xe cụ thể kèm thông tin dòng xe
+        public Car GetCarById(int id)
         {
-            return _repository.GetById(id);
+            return _context.Cars
+                           .Include(c => c.CarModel)
+                           .FirstOrDefault(m => m.Id == id);
         }
+
         public void CreateCar(Car car)
         {
-            _repository.Add(car);
+            _context.Cars.Add(car);
+            _context.SaveChanges();
         }
+
         public void UpdateCar(Car car)
         {
-            _repository.Update(car);
+            _context.Cars.Update(car);
+            _context.SaveChanges();
         }
+
         public void DeleteCar(int id)
         {
-            _repository.Delete(id);
+            var car = _context.Cars.Find(id);
+            if (car != null)
+            {
+                _context.Cars.Remove(car);
+                _context.SaveChanges();
+            }
         }
     }
 }

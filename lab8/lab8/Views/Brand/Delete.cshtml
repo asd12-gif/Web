@@ -6,40 +6,24 @@
             @if (TempData["DeleteError"] != null)
             {
                 <div class="alert alert-danger border-0 shadow-sm mb-4" style="border-radius: 15px;">
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center">
                         <i class="bi bi-exclamation-octagon-fill me-3 fs-4"></i>
-                        <div>
-                            <h6 class="fw-bold mb-1">Không thể thực hiện!</h6>
-                            <small>@TempData["DeleteError"]</small>
-                        </div>
+                        <div>@TempData["DeleteError"]</div>
                     </div>
                 </div>
             }
 
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
                 <div class="card-body p-5 text-center">
-                    <div class="mb-4">
-                        <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 4rem;"></i>
-                    </div>
+                    <img src="@Model.ImageUrl" style="height: 100px; object-fit: contain;" class="mb-4">
                     <h3 class="fw-bold text-dark">Xác nhận xóa?</h3>
-                    <p class="text-muted">Bạn có chắc chắn muốn xóa hãng xe <strong class="text-purple-dark">@Model.Name</strong> không? Hành động này không thể hoàn tác.</p>
-
-                    <div class="bg-light p-3 rounded-3 mb-4 text-start border-start border-danger border-4">
-                        <small class="text-uppercase fw-bold text-muted d-block mb-1">Thông tin bản ghi:</small>
-                        <span class="d-block"><strong>ID:</strong> #@Model.Id</span>
-                        <span class="d-block"><strong>Hãng xe:</strong> @Model.Name</span>
-                        <span class="d-block text-muted small mt-2">
-                            <i class="bi bi-info-circle"></i> Lưu ý: Chỉ xóa được khi hãng không có dòng xe nào.
-                        </span>
-                    </div>
+                    <p class="text-muted">Xóa hãng xe <strong class="text-purple-dark">@Model.Name</strong>? Hành động này không thể hoàn tác.</p>
 
                     <form asp-action="Delete">
                         <input type="hidden" asp-for="Id" />
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-danger shadow-sm py-2 fw-bold">
-                                XÓA VĨNH VIỄN
-                            </button>
-                            <a asp-action="Index" class="btn btn-outline-secondary py-2 border-0">Quay lại danh sách</a>
+                            <button type="submit" class="btn btn-danger shadow-sm py-2 fw-bold">XÓA VĨNH VIỄN</button>
+                            <a asp-action="Index" class="btn btn-outline-secondary py-2 border-0">Quay lại</a>
                         </div>
                     </form>
                 </div>

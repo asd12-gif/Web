@@ -2,31 +2,42 @@
 
 <div class="container py-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="card border-0 shadow-sm" style="border-radius: 15px;">
                 <div class="card-header bg-purple-light border-0 py-3">
-                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-plus-circle me-2"></i>Thêm Xe Mới</h4>
+                    <h4 class="text-purple-dark mb-0 fw-bold"><i class="bi bi-plus-circle-fill me-2"></i>Thêm Xe Mới</h4>
                 </div>
                 <div class="card-body p-4">
-                    <form asp-action="Create">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
                         <div class="mb-3">
-                            <label asp-for="Name" class="form-label fw-bold small">Tên xe / Biển số</label>
-                            <input asp-for="Name" class="form-control border-purple-light" placeholder="Nhập tên xe..." />
+                            <label asp-for="Name" class="form-label fw-bold text-muted small">Tên phiên bản xe</label>
+                            <input asp-for="Name" class="form-control border-purple-light" />
                             <span asp-validation-for="Name" class="text-danger small"></span>
                         </div>
 
-                        <div class="mb-4">
-                            <label asp-for="CarModelId" class="form-label fw-bold small">Dòng xe (Model)</label>
-                            <select asp-for="CarModelId" class="form-select border-purple-light"
-                                    asp-items="@(new SelectList(ViewBag.CarModels, "Id", "CarModelName"))">
+                        <div class="mb-3">
+                            <label asp-for="CarModelId" class="form-label fw-bold text-muted small">Thuộc Dòng xe</label>
+                            <select asp-for="CarModelId" class="form-select border-purple-light" asp-items="ViewBag.CarModelId">
                                 <option value="">-- Chọn dòng xe --</option>
                             </select>
-                            <span asp-validation-for="CarModelId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted small">Chọn ảnh từ máy tính</label>
+                            <input type="file" name="ImageFile" class="form-control border-purple-light" accept="image/*" />
+                            <span asp-validation-for="ImageUrl" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Description" class="form-label fw-bold text-muted small">Mô tả</label>
+                            <textarea asp-for="Description" class="form-control border-purple-light" rows="3"></textarea>
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-purple-main shadow-sm">Lưu xe</button>
-                            <a asp-action="Index" class="btn btn-link text-muted">Hủy bỏ</a>
+                            <button type="submit" class="btn btn-purple-main shadow-sm">Lưu dữ liệu</button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-sm border-0">Quay lại</a>
                         </div>
                     </form>
                 </div>

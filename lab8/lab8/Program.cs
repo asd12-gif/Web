@@ -1,6 +1,7 @@
 using lab8.Data;
 using lab8.Repository.Implementations;
 using lab8.Repository.Interface;
+using lab8.Services;
 using lab8.Services.Implementations;
 using lab8.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -14,10 +15,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
 builder.Services.AddScoped<ICarModelRepository, CarModelRepository>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 //Services
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<ICarModelService, CarModelService>();
 builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var app = builder.Build();
 
@@ -30,8 +35,9 @@ if (!app.Environment.IsDevelopment())
 }
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    DbSeeder.Seed(db);
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    DbSeeder.Seed(context);
 }
 
 app.UseHttpsRedirection();
