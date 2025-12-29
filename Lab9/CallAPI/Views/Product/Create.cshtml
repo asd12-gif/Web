@@ -1,0 +1,41 @@
+﻿<div class="container mt-4">
+    <h3>Thêm sản phẩm mới</h3>
+    <hr />
+    <div class="col-md-6 shadow p-4 bg-light">
+        <div class="mb-3">
+            <label class="form-label">Tên sản phẩm</label>
+            <input type="text" id="txtName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Giá (VNĐ)</label>
+            <input type="number" id="txtPrice" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Link ảnh (URL)</label>
+            <input type="text" id="txtImg" class="form-control" placeholder="Dán link ảnh từ mạng..." />
+        </div>
+        <button onclick="save()" class="btn btn-success">Lưu dữ liệu</button>
+        <a href="/Product" class="btn btn-secondary">Quay lại</a>
+    </div>
+</div>
+
+<script>
+    function save() {
+        let formData = new FormData();
+        formData.append("Name", $("#txtName").val());
+        formData.append("Price", $("#txtPrice").val());
+        formData.append("ImageName", $("#txtImg").val());
+        formData.append("CategoryId", 1); // Tạm thời để 1 hoặc bạn làm dropdown load Cate
+
+        $.ajax({
+            url: "https://localhost:7198/api/products",
+            type: 'POST',
+            data: formData,
+            processData: false, contentType: false,
+            success: function() {
+                alert("Thêm thành công!");
+                window.location.href = "/Product";
+            }
+        });
+    }
+</script>

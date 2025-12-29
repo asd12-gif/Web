@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Danh mục";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between">
+        <h2>Quản lý danh mục</h2>
+        <a href="/Category/Create" class="btn btn-primary">Thêm danh mục</a>
+    </div>
+    <table class="table table-hover mt-3 shadow-sm" id="cateTable">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Tên danh mục</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        const API_URL = "https://localhost:7198/api/categories";
+        $(document).ready(function() {
+            $.get(API_URL, function(data) {
+                let rows = "";
+                data.forEach(c => {
+                    rows += `<tr>
+                        <td>${c.id}</td>
+                        <td>${c.name}</td>
+                        <td>
+                            <a href="/Category/Details/${c.id}" class="btn btn-info btn-sm">Detail</a>
+                            <a href="/Category/Edit/${c.id}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/Category/Delete/${c.id}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>`;
+                });
+                $("#cateTable tbody").html(rows);
+            });
+        });
+    </script>
+}

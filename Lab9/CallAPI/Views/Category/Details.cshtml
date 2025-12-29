@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Chi tiết danh mục";
+}
+
+<div class="container mt-4">
+    <div class="card shadow" style="max-width: 500px; margin: auto; border-radius: 15px;">
+        <div class="card-header bg-primary text-white text-center" style="border-radius: 15px 15px 0 0;">
+            <h4>Thông tin danh mục</h4>
+        </div>
+        <div class="card-body p-4">
+            <div class="mb-3">
+                <label class="text-muted small">Mã số (ID):</label>
+                <h5 id="dId" class="font-weight-bold">...</h5>
+            </div>
+            <div class="mb-3">
+                <label class="text-muted small">Tên danh mục:</label>
+                <h2 id="dName" class="text-primary font-weight-bold">...</h2>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-between bg-light">
+            <a href="/Category" class="btn btn-secondary">Quay lại</a>
+            <a href="/Category/Edit/@ViewBag.Id" class="btn btn-warning">Chỉnh sửa</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            const id = "@ViewBag.Id";
+            const API_URL = "https://localhost:7198/api/categories/" + id;
+
+            // Gọi API lấy chi tiết 1 danh mục
+            $.get(API_URL, function(res) {
+                $("#dId").text(res.id);
+                $("#dName").text(res.name);
+            }).fail(function() {
+                alert("Không tìm thấy danh mục này!");
+                window.location.href = "/Category";
+            });
+        });
+    </script>
+}

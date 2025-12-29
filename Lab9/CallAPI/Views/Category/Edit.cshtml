@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Sửa danh mục";
+}
+
+<div class="container mt-4">
+    <h3>Sửa danh mục #@ViewBag.Id</h3>
+    <div class="col-md-5 shadow p-4">
+        <div class="mb-3">
+            <label>Tên danh mục mới</label>
+            <input type="text" id="txtName" class="form-control" />
+        </div>
+        <button onclick="updateCate()" class="btn btn-warning">Cập nhật</button>
+        <a href="/Category" class="btn btn-secondary">Hủy</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const id = "@ViewBag.Id";
+        const API_URL = "https://localhost:7198/api/categories/" + id;
+
+        $(document).ready(function() {
+            $.get(API_URL, function(res) {
+                $("#txtName").val(res.name);
+            });
+        });
+
+        function updateCate() {
+            $.ajax({
+                url: API_URL,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify({ id: parseInt(id), name: $("#txtName").val() }),
+                success: function() {
+                    alert("Cập nhật thành công!");
+                    window.location.href = "/Category";
+                }
+            });
+        }
+    </script>
+}

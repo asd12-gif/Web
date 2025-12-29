@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Sửa sản phẩm";
+}
+
+<div class="container mt-4">
+    <div class="card shadow" style="max-width: 650px; margin: auto; border-radius: 12px;">
+        <div class="card-header bg-warning text-dark text-center">
+            <h4 class="mb-0">CHỈNH SỬA SẢN PHẨM #@ViewBag.Id</h4>
+        </div>
+        <div class="card-body bg-light p-4">
+            <div class="mb-3">
+                <label class="form-label font-weight-bold">Tên sản phẩm</label>
+                <input type="text" id="txtName" class="form-control" placeholder="Nhập tên sản phẩm..." />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label font-weight-bold">Giá bán (VNĐ)</label>
+                <input type="number" id="txtPrice" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label font-weight-bold">Danh mục sản phẩm</label>
+                <select id="ddlCategory" class="form-control">
+                    <option value="">-- Đang tải danh mục --</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label font-weight-bold">Link ảnh mạng (URL)</label>
+                <input type="text" id="txtImg" class="form-control" placeholder="https://..." />
+            </div>
+
+            <hr />
+            <div class="d-flex gap-2">
+                <button onclick="updateProduct()" class="btn btn-warning btn-lg flex-grow-1">
+                    <i class="fas fa-save"></i> Lưu thay đổi
+                </button>
+                <a href="/Product" class="btn btn-outline-secondary btn-lg">Hủy</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const id = "@ViewBag.Id";
+        const API_PRODUCT = "https://localhost:7198/api/products/" + id;
+        const API_CATE = "https://localhost:7198/api/categories";
+
+        $(document).ready(function() {
+            // 1. Load danh sách danh mục trước
+            $.get(API_CATE, function(categories) {
+                let html = '<option value="">-- Chọn danh mục --</option>';
+                categories.forEach(item => {
+                    html += `<option value="${item.id}">${item.name}</option>`;
+                });
+                $("#ddlCategory").html(html);
+
+                // 2. Sau khi có danh mục mới load dữ liệu sản phẩm để "khớp" selection
+                loadProductData();
+            });
+        });
+
+        function loadProductData() {
+            $.get(API_PRODUCT, function(res) {
+                $("#txtName").val(res.name);
+                $("#txtPrice").val(res.price);
+                $("#txtImg").val(res.imageUrl);
+                $("#ddlCategory").val(res.categoryId); // Tự động chọn đúng danh mục cũ
+            });
+        }
+
+        function updateProduct() {
+            const cateId = $("#ddlCategory").val();
+            if (!cateId) {
+                alert("Vui lòng chọn danh mục!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("Id", id);
+            formData.append("Name", $("#txtName").val());
+            formData.append("Price", $("#txtPrice").val());
+            formData.append("ImageUrl", $("#txtImg").val()); // Lưu ý: Dùng ImageUrl cho khớp với DTO mới
+            formData.append("CategoryId", cateId);
+
+            $.ajax({
+                url: API_PRODUCT,
+                type: 'PUT',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function() {
+                    alert("Cập nhật sản phẩm thành công!");
+                    window.location.href = "/Product";
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                    alert("Lỗi: Không thể cập nhật. Hãy kiểm tra lại API!");
+                }
+            });
+        }
+    </script>
+}

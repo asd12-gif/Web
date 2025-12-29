@@ -1,0 +1,46 @@
+﻿<div class="container mt-4">
+    <div class="alert alert-danger shadow p-4 text-center">
+        <h3>XÁC NHẬN XÓA SẢN PHẨM</h3>
+        <p class="text-muted">Bạn có chắc chắn muốn xóa vĩnh viễn sản phẩm này không? Hành động này không thể hoàn tác.</p>
+        <hr />
+
+        <div id="productInfo" class="mb-4">
+            <img id="dImg" src="" width="200" class="img-thumbnail mb-3" />
+            <h4 id="dName" class="text-dark font-weight-bold"></h4>
+            <p id="dPrice" class="text-danger"></p>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2">
+            <button onclick="confirmDelete()" class="btn btn-danger btn-lg px-5">Đúng, tôi muốn xóa!</button>
+            <a href="/Product" class="btn btn-outline-secondary btn-lg px-5">Không, quay lại</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const id = @ViewBag.Id;
+    const API_URL = "https://localhost:7198/api/products/" + id;
+
+    $(document).ready(function() {
+        // Load thông tin để người dùng kiểm tra trước khi xóa
+        $.get(API_URL, function(res) {
+            $("#dName").text(res.name);
+            $("#dPrice").text(res.price.toLocaleString() + " VNĐ");
+            $("#dImg").attr("src", res.imageUrl);
+        });
+    });
+
+    function confirmDelete() {
+        $.ajax({
+            url: API_URL,
+            type: 'DELETE',
+            success: function() {
+                alert("Đã xóa sản phẩm thành công!");
+                window.location.href = "/Product"; // Quay lại trang danh sách
+            },
+            error: function() {
+                alert("Lỗi: Không thể xóa sản phẩm này (có thể do lỗi khóa ngoại).");
+            }
+        });
+    }
+</script>

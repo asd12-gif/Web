@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Thêm danh mục";
+}
+
+<div class="container mt-4">
+    <h3>Thêm danh mục mới</h3>
+    <div class="col-md-5 shadow p-4 bg-light">
+        <div class="mb-3">
+            <label class="form-label">Tên danh mục</label>
+            <input type="text" id="txtName" class="form-control" placeholder="Ví dụ: Laptop, Phụ kiện..." />
+        </div>
+        <button onclick="saveCate()" class="btn btn-success">Lưu danh mục</button>
+        <a href="/Category" class="btn btn-secondary">Quay lại</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function saveCate() {
+            const name = $("#txtName").val();
+            if(!name) return alert("Vui lòng nhập tên!");
+
+            $.ajax({
+                url: "https://localhost:7198/api/categories",
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ name: name }),
+                success: function() {
+                    alert("Thêm thành công!");
+                    window.location.href = "/Category";
+                }
+            });
+        }
+    </script>
+}

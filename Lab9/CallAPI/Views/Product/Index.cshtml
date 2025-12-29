@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Quản lý sản phẩm";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Danh sách sản phẩm</h2>
+        <a href="/Product/Create" class="btn btn-primary">Thêm mới</a>
+    </div>
+    <table class="table table-hover mt-3 shadow-sm" id="productTable">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Danh mục</th>
+                <th>Giá</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        const API_URL = "https://localhost:7198/api/products";
+
+        $(document).ready(function() {
+            console.log("Đang gọi API...");
+
+            $.get(API_URL, function(data) {
+                console.log("Dữ liệu nhận được:", data);
+
+                let rows = "";
+                if (data.length === 0) {
+                    rows = "<tr><td colspan='6' class='text-center'>Không có dữ liệu trong Database</td></tr>";
+                } else {
+                    data.forEach(p => {
+                        // Lấy tên danh mục từ thuộc tính categoryName (hoặc tên tương ứng trong DTO của bạn)
+                        let cateName = p.categoryName || "Chưa phân loại";
+
+                        rows += `<tr>
+                            <td>${p.id}</td>
+                            <td>
+                                <img src="${p.imageUrl}" width="50" height="50" style="object-fit:cover"
+                                     onerror="this.src='https://placehold.co/50'">
+                            </td>
+                            <td>${p.name}</td>
+                            <td><span class="badge bg-secondary text-white">${cateName}</span></td> <td>${p.price.toLocaleString()} đ</td>
+                            <td>
+                                <a href="/Product/Details/${p.id}" class="btn btn-info btn-sm">Detail</a>
+                                <a href="/Product/Edit/${p.id}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/Product/Delete/${p.id}" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>`;
+                    });
+                }
+                $("#productTable tbody").html(rows);
+            }).fail(function(xhr) {
+                console.error("Lỗi kết nối API:", xhr);
+                alert("Không thể tải dữ liệu. Hãy kiểm tra xem Project API đã chạy chưa!");
+            });
+        });
+    </script>
+}

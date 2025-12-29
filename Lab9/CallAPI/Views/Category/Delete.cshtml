@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Xóa danh mục";
+}
+
+<div class="container mt-4 text-center">
+    <div class="alert alert-warning shadow p-5">
+        <h2 class="text-danger">CẢNH BÁO XÓA</h2>
+        <p>Bạn có chắc muốn xóa danh mục: <strong id="cateName" class="h3">...</strong>?</p>
+        <p class="small text-muted">Lưu ý: Xóa danh mục có thể gây lỗi cho các sản phẩm thuộc danh mục này.</p>
+        <div class="mt-4">
+            <button onclick="confirmDelete()" class="btn btn-danger btn-lg px-5">Xác nhận xóa</button>
+            <a href="/Category" class="btn btn-secondary btn-lg px-5">Bỏ qua</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const id = "@ViewBag.Id";
+        const API_URL = "https://localhost:7198/api/categories/" + id;
+
+        $(document).ready(function() {
+            $.get(API_URL, function(res) {
+                $("#cateName").text(res.name);
+            });
+        });
+
+        function confirmDelete() {
+            $.ajax({
+                url: API_URL,
+                type: 'DELETE',
+                success: function() {
+                    alert("Đã xóa xong!");
+                    window.location.href = "/Category";
+                },
+                error: function() {
+                    alert("Không thể xóa danh mục này (có thể do đang chứa sản phẩm)!");
+                }
+            });
+        }
+    </script>
+}
